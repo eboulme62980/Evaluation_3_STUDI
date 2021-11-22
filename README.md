@@ -19,7 +19,8 @@ Créer et administrer une base de données
 2. Clone dépôt en local pour le développement
 3. Ajout énoncé au projet pour initialisation
 4. Analyse demande commanditaire
-5. 
+5. Diagramme de classe UML
+6.
 
 # Analyse demande commanditaire
 * ***LE COMMANDITAIRE*** est partenaire de ***PLUSIEURS*** complexes.
@@ -36,6 +37,19 @@ Créer et administrer une base de données
 * ***GESTION SCEANCES***
     * ***UN OU PLUSIERS ADMINISTRATEURS*** centraux pour ***TOUTES LES SCEANCES DE TOUTES LES SALLES***.
     * ***UN SEUL UTILISATEUR PAR COMPLEXE*** pour ***UNIQUEMENT SES SALLES***.
+
+# CHOIX techniques Diagramme de classe UML
+* J'ai choisi de rester simple et de ne pas mettre trop d'attributs aux tables ***USER***,***COMPLEX*** et ***MOVIE***, ce qui pour une application plus complête se devrait d'être fait.
+* ***UNE SALLE*** peut appartenir à ***PLUSIEURS COMPLEXES***(salle caractérisée uniquement par son nombre de siège, et ***UN COMPLEXE*** peut avoir ***PLUSIEURS SALLES*** de même nombre de siège de part le fait qu'on peut les nommer dans la table d'association ce qui les différencie).
+* table ***COMPLEX_TO_ROOM*** chaque ligne se doit d'être unique.
+* ***UN FILM*** peut être projeté dans ***PLUSIEURS SALLES*** et ***UNE SALLE*** peut projeter ***PLUSIEURS FILMS***.
+* ***UN UTILISATEUR*** peut réserver ***PLUSIEURS BOOKED_SEATS*** dans  ***PLUSIEURS SESSION*** , et ***UNE SESSION*** peut être réservée par ***PLUSIEURS UTILISATEURS***.
+* ***UN UTILSATEUR*** ne peut avoir qu'***UN ROLE*** mais ***UN ROLE*** peut être attribué à ***PLUSIEURS UTILISATEURS***.
+* Afin de restreindre uniquement à son complexe les films qu'un gérant peut programmer il faut attribuer à chaque complexe son gérant unique.
+* Les rôles d'administrateur ne serviront qu'à autoriser l'accès à toutes les fonctionalités du site.
+* Le rôle de client n'est attribué qu'aux acheteurs de places.
+* ***UN UTILISATEUR*** peut être ***UN GERANT*** de salle mais ***UNE SALLE*** ne peut avoir qu'***UN GERANT***.
+* Au lieu d'appeler la table d'association entre ***COMPLEX_TO_ROOM*** et ***MOVIE*** ***COMPLEX_TO_ROOM_TO_MOVIE*** je l'ai appelée ***SESSION*** qui est beaucoup plus représentatif.
 
 
 ## Liens utiles
