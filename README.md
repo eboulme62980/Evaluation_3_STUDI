@@ -21,7 +21,21 @@ Créer et administrer une base de données
 4. 
 
 # Analyse demande commanditaire
-* 
+* le commanditaire est partenaire de **PLUSIEURS** complexes.
+* **Chaque complexe** peut comporter **une ou plusieurs salles**(pas indiqué explicitement mais permettra l'évolutivité du système).
+* **Réservation** doit être possible dans **n'importe quelle salle de tout complexe**.
+* **1 film** peut être projeté **à la même heure** dans **plusieurs salles**.
+* **Chaque salle possède un nombre de place défini**.
+* Choix de la place par le client non nécessaire.
+* **Tarif x3:**
+    * Plein tarif = 9.2€
+    * Etudiant = 7.6€
+    * Moins de 14 ans = 5.9€
+* **Paiement au minimum sur place** ou éventuellement en ligne pour une future évolution.
+* **Gestion séances:**
+    * **un ou plusieurs administrateurs** centraux pour **tous les complexes et toutes les salles**.
+    * **un utilisateur par complexe** pour **uniquement ses salles**.
+
 
 ## Liens utiles
 [Petit guide des commandes en mark-down](https://support.zendesk.com/hc/fr/articles/203691016-Formatage-de-texte-avec-Markdown)
