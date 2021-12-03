@@ -20,7 +20,8 @@ Créer et administrer une base de données
 3. Ajout énoncé au projet pour initialisation
 4. Analyse demande commanditaire
 5. Diagramme de classe UML
-6.
+6. Rédaction des scripts de création de base et de tables séparément
+7. 
 
 # Analyse demande commanditaire
 * ***LE COMMANDITAIRE*** est partenaire de ***PLUSIEURS*** complexes.
@@ -34,7 +35,7 @@ Créer et administrer une base de données
     * Etudiant = 7.6€
     * Moins de 14 ans = 5.9€
 * ***PAIEMENT AU MINIMUM SUR PLACE*** ou éventuellement en ligne pour une future évolution.
-* ***GESTION SCEANCES***
+* ***GESTION SEANCES***
     * ***UN OU PLUSIERS ADMINISTRATEURS*** centraux pour ***TOUTES LES SCEANCES DE TOUTES LES SALLES***.
     * ***UN SEUL UTILISATEUR PAR COMPLEXE*** pour ***UNIQUEMENT SES SALLES***.
 
@@ -51,8 +52,16 @@ Créer et administrer une base de données
 * ***UN UTILISATEUR*** peut être ***UN GERANT*** de salle mais ***UNE SALLE*** ne peut avoir qu'***UN GERANT***.
 * Au lieu d'appeler la table d'association entre ***COMPLEX_TO_ROOM*** et ***MOVIE*** ***COMPLEX_TO_ROOM_TO_MOVIE*** je l'ai appelée ***SESSION*** qui est beaucoup plus représentatif.
 
+# Choix techniques lors de la création des tables
+* Contraintes d'unicité dans les tables ***complex_to_room***, ***session*** et ***user_to_session***
+   * Un film dans une salle à une heure précise se doit d'être unique (une salle ne peut projeter plusieurs films à la même heure)
+   * Une salle nommée dans un complexe doit être unique (plusieurs salles de même capacité peuvent exister dans le même complexe)
+   * Un utilisateur pour une session ne réserve qu'une fois (un utilisateur réserve un nombre de place voulues par session retenue)
+
 
 ## Liens utiles
 [Petit guide des commandes en mark-down](https://support.zendesk.com/hc/fr/articles/203691016-Formatage-de-texte-avec-Markdown)
 
 [Pro Git en français consultable en ligne](https://git-scm.com/book/fr/v2)
+
+[Réaliser des diagrammes en ligne](https://gitmind.com/fr/)
