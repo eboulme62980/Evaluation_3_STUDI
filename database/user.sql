@@ -1,0 +1,20 @@
+USE studi_db;
+
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE user 
+{
+    id INT(5) UNSIGNED,
+
+    name VARCHAR(25),
+    
+    fk_role_id INT(5) UNSIGNED
+}
+
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE user ADD PRIMARY KEY (id);
+
+ALTER TABLE user MODIFY id INT(5) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE user ADD CONSTRAINT user1 FOREIGN KEY (fk_role_id) REFERENCES role(id);

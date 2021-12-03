@@ -1,0 +1,20 @@
+USE studi_db;
+
+DROP TABLE IF EXISTS complex;
+
+CREATE TABLE complex 
+{
+    id INT(5) UNSIGNED,
+
+    name VARCHAR(40),
+
+    fk_user_id INT(5) UNSIGNED
+}
+
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE complex ADD PRIMARY KEY id;
+
+ALTER TABLE complex MODIFY id INT(5) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE complex ADD CONSTRAINT complex1 FOREIGN KEY (fk_user_id) REFERENCES user(id);

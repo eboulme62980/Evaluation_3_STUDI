@@ -1,0 +1,18 @@
+USE studi_db;
+
+DROP TABLE IF EXISTS rate;
+
+CREATE TABLE rate
+{
+    id INT(5) UNSIGNED,
+
+    name VARCHAR(25),
+    
+    price FLOAT
+}
+
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE rate ADD PRIMARY KEY id;
+
+ALTER TABLE rate MODIFY id INT(5) NOT NULL AUTO_INCREMENT;
